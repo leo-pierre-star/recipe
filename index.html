@@ -15,14 +15,14 @@
     <title>Recette omelette</title>
 </head>
 <body
-        class="bg-eggshell"
+        class="bg-eggshell py-md-5"
 >
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-<div class="container bg-white rounded-4 p-5 mt-5 w-50">
-    <img src="./assets/images/image-omelette.jpeg" class="img-fluid rounded-4 mb-5" alt="Omelette">
+<div class="container bg-white p-md-5 mt-md-5 container-custom">
+    <img src="./assets/images/image-omelette.jpeg" class="img-fluid mb-5 img-custom" alt="Omelette">
     <h1>Recette Simple d'Omelette</h1>
 
     <p class="my-4">Un plat facile et rapide, parfait pour n'importe quel repas. Cette omelette classique combine des
@@ -82,7 +82,7 @@
 
     <p>Le tableau ci-dessous montre les valeurs nutritionnelles par portion sans les garnitures supplémentaires.</p>
 
-    <table class="table">
+    <table class="table mb-0">
         <tbody>
         <tr>
             <td>Calories</td>
@@ -168,5 +168,28 @@
     .table td:nth-child(even) {
         color: hsl(14, 45%, 36%);
         font-weight: bold;
+    }
+
+    .container-custom {
+        width: 50%;
+        border-radius: var(--bs-border-radius-xl)
+    }
+
+    /* Pour les écrans larges (lg) et plus grands */
+    @media (max-width: 768px) {
+        .container-custom {
+            width: 100%; /* Ajuste la largeur à 50% */
+            border-radius: 0
+        }
+    }
+
+    .img-custom {
+        border-radius: var(--bs-border-radius-xl)
+    }
+
+    @media (max-width: 768px) {
+        .img-custom {
+            border-radius: 0
+        }
     }
 </style>
