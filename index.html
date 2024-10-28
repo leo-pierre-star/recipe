@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap"
           rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <title>Recette omelette</title>
 </head>
 <body
@@ -196,3 +198,111 @@
         }
     }
 </style>
+
+<script>
+    // Animation du conteneur principal
+    gsap.from(".container", {
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".container",
+            start: "top 80%", // Début de l'animation à 80% de la hauteur de la fenêtre
+            toggleActions: "play none none none" // Animation unique
+        }
+    });
+
+    // Animation de l'image
+    gsap.from(".img-custom", {
+        duration: 1.5,
+        opacity: 0,
+        x: -100,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".img-custom",
+            start: "top 85%",
+            toggleActions: "play none none none"
+        }
+    });
+
+    // Animation du titre principal (h1)
+    gsap.from("h1", {
+        duration: 1,
+        opacity: 0,
+        scale: 0.8,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: "h1",
+            start: "top 90%",
+            toggleActions: "play none none none"
+        }
+    });
+
+    // Animation du paragraphe de description
+    gsap.from("p.my-4", {
+        duration: 1,
+        opacity: 0,
+        y: 30,
+        ease: "power1.out",
+        scrollTrigger: {
+            trigger: "p.my-4",
+            start: "top 85%",
+            toggleActions: "play none none none"
+        }
+    });
+
+    // Animation de la section "Temps de préparation"
+    gsap.from(".bg-rose-white", {
+        duration: 1,
+        opacity: 0,
+        x: 100,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".bg-rose-white",
+            start: "top 85%",
+            toggleActions: "play none none none"
+        }
+    });
+
+    // Animation des éléments de la liste "Ingrédients"
+    gsap.from(".ul-nutmeg li", {
+        duration: 1,
+        opacity: 0,
+        x: -50,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".ul-nutmeg",
+            start: "top 90%",
+            toggleActions: "play none none none"
+        }
+    });
+
+    // Animation des éléments de la liste "Instructions"
+    gsap.from(".ol-nutmeg li", {
+        duration: 1,
+        opacity: 0,
+        y: 30,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".ol-nutmeg",
+            start: "top 90%",
+            toggleActions: "play none none none"
+        }
+    });
+
+    // Animation de la table de valeurs nutritionnelles
+    gsap.from("table", {
+        duration: 1,
+        opacity: 0,
+        scale: 0.9,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: "table",
+            start: "top 90%",
+            toggleActions: "play none none none"
+        }
+    });
+</script>
